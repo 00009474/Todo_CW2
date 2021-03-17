@@ -1,0 +1,38 @@
+extends layout 
+
+block content
+  .row 
+    .col-md-4 
+      .card 
+        .card-header
+          h3 Add new note
+        .card-body 
+          form(action="/add", method="POST")
+            .form-group.mb-3
+              label(for='todo') Add your note:
+              input.form-control#todo(type='text', name="title")
+            input(type="submit", value="Add").btn.btn-outline-success.btn-lg
+    .col-md-8 
+      table.table.table-dark.table-striped
+        thead
+          tr
+            th(scope='col') #
+            th(scope='col') ID
+            th(scope='col') Note
+            th(scope='col') Handle
+        tbody
+          tr
+            th(scope='row') 1
+            td Lorem
+            td Ipsum
+            td Dollor
+          tr
+            th(scope='row') 2
+            td Jacob
+            td Thornton
+            td @fat
+          tr
+            th(scope='row') 3
+            td(colspan='2') Larry the Bird
+            td @twitter
+
