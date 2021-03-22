@@ -11,28 +11,21 @@ block content
             .form-group.mb-3
               label(for='todo') Add your note:
               input.form-control#todo(type='text', name="title")
-            input(type="submit", value="Add").btn.btn-outline-success.btn-lg
+            input(type="submit", value="Add", href='/todo/create').btn.btn-outline-success.btn-lg
     .col-md-8 
       table.table.table-dark.table-striped
         thead
           tr
-            th(scope='col') #
-            th(scope='col') ID
-            th(scope='col') Note
-            th(scope='col') Handle
+            th(scope='col') Id
+            th(scope='col') Note:
+            th(scope='col') Edit
+            th(scope='col') Delete
         tbody
           tr
             th(scope='row') 1
-            td Lorem
-            td Ipsum
-            td Dollor
-          tr
-            th(scope='row') 2
-            td Jacob
-            td Thornton
-            td @fat
-          tr
-            th(scope='row') 3
-            td(colspan='2') Larry the Bird
-            td @twitter
+            td
+            td
+              button.btn.btn-info.btn-lg Edit
+            td
+              button.btn.btn-danger.btn-lg X
 

@@ -1,21 +1,13 @@
 const getIndex = (req, res) => {
-    res.render('index')
+    res.render ('index')
 }
 
-const Todo = require('../models/Todo')
-
 const post_index = (req,res) => {
-    console.log(req)
-    const newTodo = new Todo ({
-        title: req.body.title
-    })
-    newTodo.save((err) => {
-        if(err) console.log(err)
-        res.redirect('/')
-    })
+    console.log(req.body.title)
+    res.redirect('/')
 }
 
 module.exports = {
     getIndex: getIndex,
-    post_index: post_index 
+    post_index: post_index
 }
