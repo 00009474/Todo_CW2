@@ -1,3 +1,5 @@
+const router = require('../routes/index.js')
+
 const getIndex = (req, res) => {
     res.render ('index')
 }

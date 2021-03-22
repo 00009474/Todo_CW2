@@ -6,6 +6,12 @@ const indexController = require('../controllers/index')
 
 let todoDb = []
 
+fs.readFile('./data/tododata.json', (err, data) => {
+	if (!err) {
+		notesDb = JSON.parse(data)
+	}
+})
+
 router.get('/', indexController.getIndex)
 
 router.get ('/add', (req, res) => {
@@ -22,6 +28,7 @@ router.post('/add', (req, res) => {
         id: generateRandomId(),
         body: req.body.title
     }
+
     todoDb.push(note_todo)
     fs.writeFile('./data/tododata.json', JSON.stringify(todoDb), (err) => {
         if (err) {
@@ -30,9 +37,6 @@ router.post('/add', (req, res) => {
 			res.redirect('/add?success=1')
 		}
     })
-
 })
-
-
 
 module.exports = router;
