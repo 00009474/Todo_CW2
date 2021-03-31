@@ -1,0 +1,14 @@
+extends layout 
+
+block content
+  .row
+    .col-md 
+      .card 
+        .card-header
+          h3 Edit your todo!
+        .card-body 
+          form(method="POST", action="/edit" + todo.id)
+            .form-group.mb-3
+              label(for='add') Edit your note:
+              input.form-control#todo(type='text', name="title")
+            input(type="submit", value="Edit", href='/add/edit').btn.btn-outline-success.btn-lg
