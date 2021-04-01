@@ -100,7 +100,7 @@ header ul li a:hover{
 }
 
 .content-main p {
-    font-size: 30px;
+    font-size: 25px;
     padding: 25px 0;
     font-weight: 300;
 }
@@ -175,12 +175,12 @@ header ul li a:hover{
 }
   
 .container_input:hover input ~ .checkmark {
-    background-color: rgb(232, 255, 196);
+    background-color: rgb(204, 245, 255);
     transition: .5s;
 }
   
 .container_input input:checked ~ .checkmark {
-    background-color: #21f33d;
+    background-color: #0084ff;
 }
   
 .checkmark:after {
