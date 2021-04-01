@@ -25,6 +25,10 @@ class ToDoRepository{
 	updateFile(callback){
 		fs.writeFile('./data/tododata.json', JSON.stringify(this.todoDb), callback)
 	}
+
+	getAll(){
+		return this.todoDb
+	}
 }
 
 module.exports.ToDoRepository = ToDoRepository

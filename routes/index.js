@@ -94,6 +94,15 @@ router.get('/add/:id/delete', (req, res) => {
 	})
 })
 
+router.get('/apishowcase', (req, res) => {
+	res.render('api')
+})
+
+router.get('/api/v1/todos', (req, res) => {
+	const todos = todoRepo.getAll()
+	res.json(todos)
+})
+
 
 function generateRandomId() {
 	return Math.floor(Math.random() * 99999999999) + 1;
