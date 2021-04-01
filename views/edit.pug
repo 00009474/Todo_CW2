@@ -7,8 +7,8 @@ block content
         .card-header
           h3 Edit your todo!
         .card-body 
-          form(method="POST", action="/edit" + todo.id)
+          form(method="POST", action=`/add/${ todo.id }/edit`)
             .form-group.mb-3
-              label(for='add') Edit your note:
-              input.form-control#todo(type='text', name="title")
-            input(type="submit", value="Edit", href='/add/edit').btn.btn-outline-success.btn-lg
+              label(for="body") Edit your note:
+              input.form-control#todo(type='text', name="body" value=todo.body)
+            input(type="submit", value="Edit").btn.btn-outline-success.btn-lg

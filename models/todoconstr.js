@@ -1,40 +1,25 @@
 const fs = require('fs')
 
-class TodoRepository {
+
+class ToDoRepository{
 	constructor(){
 		this.todoDb = []
-
 		fs.readFile('./data/tododata.json', (err, data) => {
 			if (!err) {
 				this.todoDb = JSON.parse(data)
 			}
 		})
 	}
-    
-	add(todo, callback){
-		todo.id = this.generateRandomId()
-		this.todoDb.push(todo)
-		this.updateFile(callback)
-	}
 
-	getAllUnarchived() {
-		return this.todoDb.filter(todo => !todo.archived)
-	}
-
-	getbyId(id) {
-		return this.todoDb.find(todo => todo.id === id)
-	}
-
-	delete(id, callback) {
+	update(id, updatedToDo, callback){
 		const index = this.todoDb.findIndex(todo => todo.id === id)
-
-		this.todoDb.splice(index, 1)
+		this.todoDb[index] = updatedToDo
 
 		this.updateFile(callback)
 	}
 
-	generateRandomId() {
-		return Math.floor(Math.random() * 99999999999) + 1
+	getById(id){
+		return this.todoDb.find(todo => todo.id === id)
 	}
 
 	updateFile(callback){
@@ -42,5 +27,5 @@ class TodoRepository {
 	}
 }
 
-module.exports.TodoRepository = TodoRepository
+module.exports.ToDoRepository = ToDoRepository
 

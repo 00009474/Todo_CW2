@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const fs = require('fs')
-const path = require('path')
+const path = require('path');
+const { ToDoRepository } = require('../models/todoconstr')
 
 const rootFolder = path.dirname(
 	require.main.filename || process.require.main.filename
@@ -10,6 +11,8 @@ const rootFolder = path.dirname(
 const dbFile = `${ rootFolder }/data/tododata.json`
 
 let todoDb = []
+
+const todoRepo = new ToDoRepository()
 
 fs.readFile(dbFile, (err, data) => {
 	if (!err) {
@@ -41,6 +44,26 @@ router.post('/add', (req, res) => {
 			res.redirect('/')
 		}
     })
+})
+
+// Edit
+router.get('/add/:id/edit', (req, res) =>{
+	const id = parseInt(req.params.id)
+	const todo = todoRepo.getById(id)
+	res.render('edit', {todo})
+})
+
+router.get('/add/:id/edit', (req, res) =>{
+	const id = parseInt(req.params.id)
+	const todo = todoRepo.getById(id)
+
+	todo.body = req.body.body
+
+	todoRepo.update(id, todo, (err) =>{
+		if (err) res.sendStatus(500)
+	
+		res.redirect('/')
+	})
 })
 
 
