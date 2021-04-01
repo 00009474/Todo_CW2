@@ -16,7 +16,7 @@ block content
       table.table.table-dark.table-striped
         thead
           tr 
-            th(scope='col') Id
+            th(scope='col') Check
             th(scope='col') Note:
             th(scope='col') Edit
             th(scope='col') Delete
@@ -24,6 +24,9 @@ block content
           each todo in todos 
             tr
               th(scope='row')
+                label.container_input 
+                  input.input_check(type="checkbox")
+                  span.checkmark 
               td 
                 p(href="/add/" + todo.id).todo_data= todo.body
               td

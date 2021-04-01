@@ -9,8 +9,6 @@ const rootFolder = path.dirname(
 
 const dbFile = `${ rootFolder }/data/tododata.json`
 
-const indexController = require('../controllers/index')
-
 let todoDb = []
 
 fs.readFile(dbFile, (err, data) => {
@@ -63,9 +61,9 @@ router.get('/add/:id/delete', (req, res) => {
 	fs.readFile(dbFile, (err, data) => {
 		
 		const todoDb = JSON.parse(data)
-		const filtereToDoDb = todoDb.filter(todo => todo.id != id)
+		const filterToDoDb = todoDb.filter(todo => todo.id != id)
 	
-		fs.writeFile(dbFile, JSON.stringify(filtereToDoDb), (err) => {
+		fs.writeFile(dbFile, JSON.stringify(filterToDoDb), (err) => {
 			if (err) res.sendStatus(500)
 	
 			res.redirect('/')
