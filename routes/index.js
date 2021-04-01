@@ -53,7 +53,7 @@ router.get('/add/:id/edit', (req, res) =>{
 	res.render('edit', {todo})
 })
 
-router.get('/add/:id/edit', (req, res) =>{
+router.post('/add/:id/edit', (req, res) =>{
 	const id = parseInt(req.params.id)
 	const todo = todoRepo.getById(id)
 
