@@ -35,6 +35,12 @@ npm i body-parser
 npm i fs
 ```
 
+There is also the easiest way to get everything installed automatically. To do this, the user, being in the folder, needs to register the following command in the terminal or command line:
+
+```bash
+npm install package.json
+```
+
 After that, user needs to start the server, this can be done in two ways:
 
 ```bash
