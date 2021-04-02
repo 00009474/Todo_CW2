@@ -330,4 +330,25 @@ flex: 1 100%;
     margin-left: 10px;
 }
 
+@media screen and (min-width: 600px) {
+    .footer-right > *{
+        flex: 1;
+    }
+    .footer-left{
+        flex: 1 0px;
+    }
+    .footer-right{
+        flex: 2 0px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer{
+        padding: 15px;
+    }
+    main{
+        font-size: 50px;
+    }
+}
+
 
