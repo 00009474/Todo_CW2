@@ -11,3 +11,24 @@ First of all, user needs to open a terminal or command line and use the cd comma
 ```bash
 cd Desktop
 ```
+After the user is in the project folder, it is necessary to install the required modules in order.
+
+First, let's start by installing Nodemon:
+
+```bash
+npm i nodemon -D
+```
+
+Next, user needs to install the [express](https://expressjs.com/) and [pug](https://pugjs.org/api/getting-started.html) extensions:
+
+```bash
+npm i express pug
+```
+
+And the last thing you need to do is install one more extension, this is a [body-parser](https://www.npmjs.com/package/body-parser).
+
+```bash
+npm i body-parser
+```
+
+
