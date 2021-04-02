@@ -25,10 +25,42 @@ Next, user needs to install the [express](https://expressjs.com/) and [pug](http
 npm i express pug
 ```
 
-And the last thing you need to do is install one more extension, this is a [body-parser](https://www.npmjs.com/package/body-parser).
+And the last two things that user needs to do is install two extension, [body-parser](https://www.npmjs.com/package/body-parser) and [fs](https://nodejs.org/api/fs.html)
 
 ```bash
 npm i body-parser
 ```
 
+```bash
+npm i fs
+```
 
+After that, user needs to start the server, this can be done in two ways:
+
+```bash
+npm run dev
+```
+
+or
+
+```bash
+node app.js
+```
+
+Next, the user needs to go to the Internet browser and write in the search line: localhost:3000
+
+Further, all the necessary to-dos are saved in a local file in JSON format _tododata.json_
+
+### api/v1/todos
+
+In order to view the data that is in the local database, the user needs to register the following path: http://localhost:3000/api/v1/todos
+
+After use, user can close the integrated development system, or using the Ctrl + C key combination, he/she can shut down the server, and then restart it as described above.
+
+## Application dependencies’ list
+
+Node js, express, nodemon, pug, body-parser, fs
+
+## Link to github
+
+Github: 
