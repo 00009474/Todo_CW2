@@ -5,11 +5,11 @@ block content
     .col-md-4 
       .card 
         .card-header
-          h3 Add new note
+          h3 Add new to-do
         .card-body 
           form(action="/add", method="POST")
             .form-group.mb-3
-              label(for='todo') Add your note:
+              label(for='todo') Add your to-do:
               input.form-control#todo(type='text', name="title")
             input(type="submit", value="Add").btn.btn-outline-success.btn-lg    
     .col-md-8 
@@ -17,7 +17,7 @@ block content
         thead
           tr 
             th(scope='col') Check
-            th(scope='col') Note:
+            th(scope='col') To-Do:
             th(scope='col') Edit
             th(scope='col') Delete
         tbody

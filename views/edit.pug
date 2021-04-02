@@ -5,10 +5,10 @@ block content
     .col-md 
       .card 
         .card-header
-          h3 Edit your todo!
+          h3 Edit your to-do!
         .card-body 
           form(method="POST", action=`/add/${ todo.id }/edit`)
             .form-group.mb-3
-              label(for="body") Edit your note:
+              label(for="body") Edit your to-do:
               input.form-control#todo(type='text', name="body" value=todo.body)
             input(type="submit", value="Edit").btn.btn-outline-success.btn-lg
